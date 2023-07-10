@@ -16,7 +16,7 @@ export default function W4TWInfoPage({ navigation }) {
             <Icon name='arrow-left' color='#03DAC5' size={25} />
         </Pressable>
 
-        <Text  numberOfLines={2} adjustsFontSizeToFit style= {styles.text}>Water for the World {'\n\n'} (W4TW)</Text>
+        <Text  numberOfLines={1} style= {styles.text}>Water for the World {'\n\n'} (W4TW)</Text>
         <Text numberOfLines={5}  style= {styles.textUnder}>Workshops are delivered by the Engineers Without Borders (EWB) volunteers to school and university students across Canada. Workshops are also available for corporate and community events by contacting W4W at: </Text>
         
         {/* URLs */}
@@ -52,7 +52,8 @@ export default function W4TWInfoPage({ navigation }) {
 const styles = StyleSheet.create({
     background: {
         backgroundColor: '#1E1E1E',
-        height: Dimensions.get('window').height,
+        // height: Dimensions.get('window').height,
+        height: '100%',
         width: Dimensions.get('window').width,
     },
     backArrow: {
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         color: '#03DAC5',
         marginTop: Dimensions.get('window').height/12,
         textAlign:'center',
-        fontSize:30,
+        fontSize:20,
         fontWeight: 'bold',
     },
     textUnder:{
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     },
     description:{
         color: '#03DAC5',
-        marginTop: Dimensions.get('window').height/50,
+        marginTop: Dimensions.get('window').height/30,
         textAlign:'center',
         marginLeft: Dimensions.get('window').width/ 12,
         marginRight: Dimensions.get('window').width/ 12,
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     w4twlogo: {
         marginBottom: Dimensions.get('window').height/30,
         alignSelf: 'center',
-        width: Dimensions.get('window').width / 3,
+        width: Dimensions.get('window').width,
         height: Dimensions.get('window').height / 6,
         flex: 1,
     },
