@@ -57,7 +57,7 @@ export default function PreQ6({ navigation }) {
 							1 Billion people in the world live in Extreme Poverty; over 1 in 8
 							people in the world, many of them children. {'\n\n'}
 							Think about what you could buy with $2.50 – what could you eat and
-							how would your or your parents be able to pay your rent? {'\n'}
+							how would your or your parents be able to pay your bills? {'\n'}
 						</Text>
 						<Pressable
 							style={styles.popupButton}

@@ -26,7 +26,7 @@ export default function Result90({ route, navigation }) {
             <View style={styles.skipContainer}>
                 <Pressable style={styles.button1} numberOfLines={1} onPress={() => navigation.navigate("GameIns")}>
                     <Text style={styles.textButton}>
-                        Visit a different country
+                        Try a different country
                     </Text>
                     <View style={styles.arrow} >
                     <FontAwesome5 name='angle-right' color='#03DAC5' size={15}/>
@@ -62,7 +62,8 @@ export default function Result90({ route, navigation }) {
 const styles = StyleSheet.create({
     background: {
         backgroundColor: '#1E1E1E',
-        height: Dimensions.get('window').height,
+        // height: Dimensions.get('window').height,
+        height: '100%',
         width: Dimensions.get('window').width,
         justifyContent: 'center',
         alignItems: 'center',

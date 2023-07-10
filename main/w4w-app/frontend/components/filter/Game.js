@@ -1239,7 +1239,8 @@ export default function Game({ route, navigation }) {
 
        {/* Material Scroll List */}
        <View style={styles.scroll}>
-         <Text style={styles.caption}>{"\n"}Scroll for more {"\n"}</Text>
+          <Text style={styles.caption}>Scroll left for more</Text>
+         <Text style={styles.caption2}>{"\n"}Click a material, then click on a slot in the filter {"\n"}</Text>
 
          {/* Fine Sand */}
          <ScrollView horizontal= {true} showsHorizontalScrollIndicator={false}>
@@ -1425,7 +1426,7 @@ export default function Game({ route, navigation }) {
 const styles = StyleSheet.create({
    background: {
        backgroundColor: '#1E1E1E',
-       height: Dimensions.get('window').height,
+       height: '100%',
        width: Dimensions.get('window').width,
        justifyContent: 'center',
        alignItems: 'center',
@@ -1534,7 +1535,7 @@ const styles = StyleSheet.create({
        paddingLeft: 20,
        paddingRight: 20,
        marginLeft: Dimensions.get('window').width / 13,
-       marginTop: Dimensions.get('window').width / 70,
+       marginTop: Dimensions.get('window').width / 10,
        borderColor: 'transparent',
        borderRadius: 999,
        borderWidth: 2,
@@ -1551,8 +1552,13 @@ const styles = StyleSheet.create({
    caption:{
        color: '#03DAC5',
        marginTop: Dimensions.get('window').height / -12,
-       marginLeft: -Dimensions.get('window').width / -1.5,
+       marginLeft: -Dimensions.get('window').width / -3,
    },
+   caption2:{
+    color: '#03DAC5',
+    marginTop: Dimensions.get('window').height / -12,
+    marginLeft: -Dimensions.get('window').width / -7.5,
+},
    backBox:{
        flexDirection: 'row',
        justifyContent: 'space-between',

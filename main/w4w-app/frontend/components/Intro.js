@@ -16,7 +16,7 @@ export default function Intro({ navigation }) {
 const styles = StyleSheet.create({
   background: {
     backgroundColor: '#1E1E1E',
-    height: Dimensions.get('window').height,
+    height: '100%',
     width: Dimensions.get('window').width,
   },
   text:{
