@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
 	textButton: {
 		color: '#03DAC5',
 		textAlign: 'center',
-		fontSize: 14,
+		fontSize: 16,
 		fontWeight: 'bold',
 		flex: 5,
 	},
