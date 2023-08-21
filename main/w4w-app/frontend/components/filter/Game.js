@@ -11,6 +11,8 @@ export default function Game({ route, navigation }) {
   const [modalVisible3, setModalVisible3] = useState(false);
   const [modalVisible4, setModalVisible4] = useState(false);
   const [modalVisible5, setModalVisible5] = useState(false);
+  const [modalVisible6, setModalVisible6] = useState(false);
+  const [modalVisible7, setModalVisible7] = useState(false);
   const { moneyVal, country , f1, f2, f3, f4, f5, f6, f7, f8, isNew} = route.params;
 
   // Images of the filter materials
@@ -278,7 +280,63 @@ export default function Game({ route, navigation }) {
    );
  };
 
- // Popup for chance cards
+ // Popup for filter falling appart 
+ const filterFallsApart = () => {
+  return (
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible6}
+        onRequestClose={() => {
+          setModalVisible6(!modalVisible6);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.answerView}>Filter fell apart</Text>
+            <Text style={styles.answerView}>Check your most bottom layer!</Text>
+            <Pressable
+              style={[styles.buttonAns, styles.buttonClose]}
+              onPress={() => setModalVisible6(!modalVisible6)}
+            >
+              <Text style={styles.textButton}>OK</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
+
+ // Popup for floating material
+ const floatingMats = () => {
+  return (
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible7}
+        onRequestClose={() => {
+          setModalVisible7(!modalVisible7);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.answerView}>Your materials are floating!</Text>
+            <Text style={styles.answerView}>Please adjust your layers by filling bottom up</Text>
+            <Pressable
+              style={[styles.buttonAns, styles.buttonClose]}
+              onPress={() => setModalVisible7(!modalVisible7)}
+            >
+              <Text style={styles.textButton}>OK</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
 
  // Canada donates $50 or a country from List B receives $35
  const loseFundsModal = () => {
@@ -1232,14 +1290,18 @@ export default function Game({ route, navigation }) {
        {lackofFundsModal()}
        {/* Popup for Chance Cards */}
        {loseFundsModal()}
+       {/* Popup for Last Layer Not Cheese Cloth */}
+       {filterFallsApart()}
+        {/* Popup for Floating Materials */}
+       {floatingMats()}
        {/* Popup for Midgame Chance Cards */}
        {loseFundsModalMid1()}
        {loseFundsModalMid2()}
        {loseFundsModalMid3()}
-
+             
        {/* Material Scroll List */}
        <View style={styles.scroll}>
-          <Text style={styles.caption}>Scroll left for more</Text>
+          <Text style={styles.caption3}>Hold a layer to remove, Scroll left for more</Text>
          <Text style={styles.caption2}>{"\n"}Click a material, then click on a slot in the filter {"\n"}</Text>
 
          {/* Fine Sand */}
@@ -1366,6 +1428,18 @@ export default function Game({ route, navigation }) {
                result = '100';
                navigation.navigate("result100", { result: result })
              } 
+             else if (
+              ((filtermat1!='none' && (filtermat2=='none' || filtermat3=='none' || filtermat4=='none' || filtermat5=='none' || filtermat6=='none' || filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat2!='none' && (filtermat3=='none' || filtermat4=='none' || filtermat5=='none' || filtermat6=='none' || filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat3!='none' && (filtermat4=='none' || filtermat5=='none' || filtermat6=='none' || filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat4!='none' && (filtermat5=='none' || filtermat6=='none' || filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat5!='none' && (filtermat6=='none' || filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat6!='none' && (filtermat7=='none' || filtermat8=='none')))
+              || ((filtermat7!='none' && (filtermat8=='none')))
+             )
+             {
+              setModalVisible7(!modalVisible7)
+             } 
              // 90%
              else if(
                (filtermat1!='coarseGravel' && filtermat2=='fineGravel' && filtermat3 =='coarseSand' && filtermat4=='coarseSand' && filtermat5=='fineSand' && filtermat6=='fineSand' &&filtermat7 == 'cotton' && filtermat8 == 'cheeseCloth')||
@@ -1401,6 +1475,11 @@ export default function Game({ route, navigation }) {
                {
                  result = 'only 80% cleaned';
                  navigation.navigate("result80less", { result: result })
+               }
+               else if (
+                (filtermat8!='cheeseCloth')
+               ){
+                setModalVisible6(!modalVisible6)
                }
                // < 80%
                else{
@@ -1558,7 +1637,12 @@ const styles = StyleSheet.create({
     color: '#03DAC5',
     marginTop: Dimensions.get('window').height / -12,
     marginLeft: -Dimensions.get('window').width / -7.5,
-},
+   },
+   caption3:{
+    color: '#03DAC5',
+    marginTop: Dimensions.get('window').height / -12,
+    marginLeft: -Dimensions.get('window').width / -6,
+   },
    backBox:{
        flexDirection: 'row',
        justifyContent: 'space-between',
