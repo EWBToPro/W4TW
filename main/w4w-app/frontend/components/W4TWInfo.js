@@ -45,6 +45,11 @@ export default function W4TWInfoPage({ navigation }) {
             <Text style={styles.links}>www.torontopro.ewb.ca/w4tw</Text>
         </Pressable>
 
+        <Text numberOfLines={1} adjustsFontSizeToFit style= {styles.description}> Privacy Policy</Text>
+        <Pressable onPress={() => Linking.openURL('https://docs.google.com/document/d/1iG2o0A9GvBjSFqaApZ6EQdNJlM3OO_eb14lUiR34NlQ/edit?usp=sharing')}>
+            <Text style={styles.linksmall}>https://docs.google.com/document/d/1iG2o0A9GvBjSFqaApZ6EQdNJlM3OO_eb14lUiR34NlQ/edit?usp=sharing</Text>
+        </Pressable>
+
         <Image source={require('../assets/WFTW.png')} style={styles.w4twlogo}/>
     </View>
   );
@@ -67,6 +72,12 @@ const styles = StyleSheet.create({
         textAlign:'center',
         fontSize:20,
         fontWeight: 'bold',
+    },
+    linksmall:{
+        color: 'lightblue',
+        textAlign:'center',
+        fontSize:12,
+        textDecorationLine: 'underline',
     },
     textUnder:{
         color: '#03DAC5',
