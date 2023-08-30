@@ -46,8 +46,8 @@ export default function W4TWInfoPage({ navigation }) {
         </Pressable>
 
         <Text numberOfLines={1} adjustsFontSizeToFit style= {styles.description}> Privacy Policy</Text>
-        <Pressable onPress={() => Linking.openURL('https://docs.google.com/document/d/1iG2o0A9GvBjSFqaApZ6EQdNJlM3OO_eb14lUiR34NlQ/edit?usp=sharing')}>
-            <Text style={styles.linksmall}>https://docs.google.com/document/d/1iG2o0A9GvBjSFqaApZ6EQdNJlM3OO_eb14lUiR34NlQ/edit?usp=sharing</Text>
+        <Pressable onPress={() => Linking.openURL('https://drive.google.com/file/d/1jOZWoijX9ejdKGbcxCVo2Smm7rcHcuNe/view')}>
+            <Text style={styles.linksmall}>https://drive.google.com/file/d/1jOZWoijX9ejdKGbcxCVo2Smm7rcHcuNe/view</Text>
         </Pressable>
 
         <Image source={require('../assets/WFTW.png')} style={styles.w4twlogo}/>
