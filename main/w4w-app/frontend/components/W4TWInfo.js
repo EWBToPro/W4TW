@@ -45,9 +45,12 @@ export default function W4TWInfoPage({ navigation }) {
             <Text style={styles.links}>www.torontopro.ewb.ca/w4tw</Text>
         </Pressable>
 
-        <Text numberOfLines={1} adjustsFontSizeToFit style= {styles.description}> Privacy Policy</Text>
-        <Pressable onPress={() => Linking.openURL('https://drive.google.com/file/d/1jOZWoijX9ejdKGbcxCVo2Smm7rcHcuNe/view')}>
-            <Text style={styles.linksmall}>https://drive.google.com/file/d/1jOZWoijX9ejdKGbcxCVo2Smm7rcHcuNe/view</Text>
+        {/* <Text numberOfLines={1} adjustsFontSizeToFit style= {styles.description}> Privacy Policy</Text> */}
+        <Pressable onPress={() => Linking.openURL('https://www.torontopro.ewb.ca/w4tw-privacy-policy')}>
+            <Text style={styles.description}>Privacy Policy</Text>
+        </Pressable>
+        <Pressable onPress={() => Linking.openURL('https://www.torontopro.ewb.ca/w4tw-privacy-policy')}>
+            <Text style={styles.linksmall}>https://www.torontopro.ewb.ca/w4tw-privacy-policy</Text>
         </Pressable>
 
         <Image source={require('../assets/WFTW.png')} style={styles.w4twlogo}/>
